@@ -3,6 +3,9 @@
 /* Question 0. Import a font and make all text in the body using that font. Check the homework instructions for more information!*/
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 50px auto;
     max-width: 1000px;
     color: #1d3557;
@@ -48,13 +51,17 @@ img:hover {
     /* YOUR CODE HERE */
 }
 
-
+.self-image{
+    text-align: center;
+}
 
 /* Question 2. Add margin, padding, and borders to section tags! */
 section {
     text-align: center;
     padding: 5px;
     margin:10px 5px;
+    border: 2px dashed black;
+    border-radius:10px;
     /* YOUR CODE HERE */
 }
 
@@ -63,10 +70,25 @@ section {
 /* Question 3. Add different background colors for all the different sections, by selecting them via ids. */
 
 /* YOUR CODE HERE */
+#education{
+    background-color: #6c88106a;
+}
 
+#experience{
+    background-color: #1f8a6f82;
+    
+}
 
+#projects{
+    background-color: #b06a088e;
+    
+}
 
-/* Experience Section */
+#contact{
+    background-color: #0897b08e;
+    
+}
+
 
 /* Question 4a. This is a little tougher! Use CSS Flexbox to display your experiences as shown in the diagram.
  Hint: If you're stuck with finding values that work, check the homework instructions document for some help!*/
@@ -85,6 +107,7 @@ section {
     text-align: left;
     width: 250px;
     padding: 10px 20px;
+    margin: 10px;
     background-color: #a5d2ee;
     border-radius: 15px;
 
@@ -98,8 +121,11 @@ section {
 /* Question 4b. Let's take a break! Add a hover effect to each experience-list-item div. 
 Experiment with border, border-radius, background-color, or whatever you want!*/
 
+
 .experience-list-item:hover {
-    /* YOUR CODE HERE */
+    border: 4px solid #1d3557;
+    transform: scale(1.1);
+    background-color: #bbbdbd;
 }
 
 
@@ -109,19 +135,34 @@ Experiment with border, border-radius, background-color, or whatever you want!*/
 
 /* Question 5. Use CSS Flexbox or Grid and hover effects for the Projects Section, 
 but use different hover effects from the Experiences section! */
+.project-wrapper{
+display: flex;
+flex-direction: row;
+}
 
-
-
+.project-list-item{
+    margin: 15px;
+    padding: 5px;
+    background-color: rgb(165, 187, 185);
+    border-radius:10px;
+    border: 2px green solid;
+}
+  
+.project-list-item:hover{
+    border: #75970e dashed;
+}
 
 /* Contact Section */
 
 /* Question 6. Make your link pretty! */
 a {
-    /* YOUR CODE HERE */
+    text-decoration: none;
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 a:hover {
-    /* YOUR CODE HERE */
+   color: #000;
 }
 
 
@@ -130,5 +171,15 @@ project-list-item and experience-list-item divs have a width of 100% for smaller
 
 /* Small devices (portrait tablets and large phones, 600px screen and up) */
 @media only screen and (max-width: 600px) {
-    /* YOUR CODE HERE */
+    .project-wrapper {
+       flex-direction: column;
+      
+    }
+
+    .experience-list-item {
+        width: 80%;
+    }
+    .project-list-item {
+        margin: 5px;
+    }
 }
